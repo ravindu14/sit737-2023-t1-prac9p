@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prac9p-deployment
+  labels:
+    app: prac9p
+spec:
+  selector:
+    matchLabels:
+      app: prac9p
+  template:
+    metadata:
+      labels:
+        app: prac9p
+    spec:
+      containers:
+      - name: prac9p
+        image: spiky14/sit-737-prac9p:version2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080

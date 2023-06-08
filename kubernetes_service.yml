@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: prac9p-service
+spec:
+  selector:
+    app: prac9p
+  type: LoadBalancer
+  ports:
+  - port: 8080
+    targetPort: 8080
+    nodePort: 31112
